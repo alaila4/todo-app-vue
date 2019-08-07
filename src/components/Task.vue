@@ -3,6 +3,7 @@
         <div v-for="task in tasks" :key="task.id">
             <h1 class="text-grey-400">{{task.title}}</h1>           
         </div>
+
     </div>
 </template>
 

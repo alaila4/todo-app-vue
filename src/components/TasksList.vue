@@ -1,7 +1,12 @@
 <template>
     <div>
-        <div v-for="task in tasks" :key="task.id" class="bg-gray-100 shadow p-4 my-1 rounded">
-            <h1 class="text-grey-400">{{task.title}}</h1>  
+        <div v-for="(task, index) in tasks" :key="task.id" class="container flex bg-gray-100 shadow p-4 my-1 rounded">
+            <div class="justify-start mr-20">
+                <h1 class="text-grey-400 " >{{task.title}}</h1>
+            </div>
+            <div class="justify-end ml-20 cursor-pointer" @click="removeTask(index)">
+                <i>&times;</i>
+            </div>
         </div>
     </div>
     
@@ -27,11 +32,7 @@ export default {
                     title: 'Create a project',
                     done: false
                 },
-                {
-                    id: 3,
-                    title: 'Create an activity',
-                    done: false
-                },
+                
             ]
 
         };
@@ -42,6 +43,10 @@ export default {
     },
 
     methods: {
+        removeTask(index) {
+            this.tasks.splice(index, 1)
+
+        }
 
     }
 }
