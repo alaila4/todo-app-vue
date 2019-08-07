@@ -3,7 +3,13 @@
         <h1 class="font-hairline text-6xl text-center text-gray-500">Todo App</h1>
 
         <todo-card class="mx-auto mt-4 h-64 w-full max-w-lg">
-            Todo List
+            <h1 class="font-semibold tracking-widest text-gray-400 text-center my-2 ">TODAY</h1>
+            <todo-tasks-list></todo-tasks-list>
+        </todo-card>
+
+        <todo-card class="mx-auto mt-4 h-64 w-full max-w-lg">
+            <h1 class="font-semibold tracking-widest text-gray-400 text-center my-2">TOMORROW</h1>
+            <todo-tasks-list></todo-tasks-list>
         </todo-card>
 
         <todo-card class="mx-auto mt-10 w-full max-w-lg">
@@ -14,19 +20,14 @@
 
 <script>
 export default {
+    name:'todo-list',
     props: {
 
     },
 
     data () {
         return {
-            tasks: [
-                {
-                    id: 1,
-                    title: 'Example task',
-                    done: false
-                }
-            ]
+           
         };
     },
 
