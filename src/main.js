@@ -6,11 +6,13 @@ import Card from './components/Card.vue';
 import Task from './components/Task.vue';
 import TasksList from './components/TasksList.vue';
 
+
 Vue.config.productionTip = false;
 
 Vue.component('todo-card', Card);
 Vue.component('todo-task', Task);
 Vue.component('todo-tasks-list', TasksList);
+
 
 new Vue({
   render: h => h(App),
