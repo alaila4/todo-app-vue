@@ -1,5 +1,27 @@
 <template>
     <div>
+        <div class="container flex">
+            <input 
+                class="bg-white 
+                    focus:outline-none 
+                    focus:shadow-outline 
+                    border border-gray-300 
+                    rounded-lg py-3 px-4 my-4 block w-full 
+                    appearance-none leading-normal" 
+                type="text" 
+                v-model="newTask" 
+                placeholder="Add your task"
+                v-on:keyup.enter="addTask"
+            >
+            <button 
+                class="flex-content 
+                    bg-blue-500 hover:bg-blue-700 
+                    text-white font-bold py-2 px-4 rounded
+                    px-2 mx-2 my-4" 
+                v-on:click="addTask">Add
+            </button>
+        </div>
+        
         <div v-for="(task, index) in tasks" :key="task.id" class="container flex bg-gray-100 shadow p-4 my-1 rounded">
             <div class="justify-start mr-20">
                 <h1 class="text-grey-400 " >{{task.title}}</h1>
@@ -8,6 +30,7 @@
                 <i>&times;</i>
             </div>
         </div>
+        
     </div>
     
 </template>
@@ -21,6 +44,7 @@ export default {
 
     data () {
         return {
+            newTask:'',
             tasks: [
                 {
                     id: 1,
@@ -46,6 +70,10 @@ export default {
         removeTask(index) {
             this.tasks.splice(index, 1)
 
+        },
+        addTask (){
+            this.tasks.push(this.newTask)
+            this.newTask = '';
         }
 
     }
