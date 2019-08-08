@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="text-center font-semibold" type="button" @click="sendTask"> ADD </button>
+        <button class="text-center font-semibold" type="button" @click="$emit('click')"> ADD </button>
     </div>
 </template>
 
@@ -16,10 +16,6 @@ export default {
         };
     },
     methods: {
-        sendTask(){
-            this.$emit('send-task')
-        }
-
     }
 }
 </script>

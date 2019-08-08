@@ -39,15 +39,15 @@ export default {
     },
 
     mounted() {},
-        methods: {
-            removeTask(index) {
-            this.tasks.splice(index, 1);
+    methods: {
+        removeTask(index) {
+          this.tasks.splice(index, 1);
         },
+        completeTask(index) {
+          this.$emit("add-to-done-list", this.tasks[index]);
+          this.tasks.splice(index, 1);
+        }
     },
-
-    completeTask(index) {
-        this.$emit("add-to-done-list", this.tasks[index]);
-        this.tasks.splice(index, 1);
-    }
+    
 };
 </script>

@@ -8,7 +8,7 @@
                     border border-gray-300 
                     rounded-lg py-3 px-4 my-4 block w-full 
                     appearance-none leading-normal" 
-                v-model="newTask" 
+                v-model="task.title" 
                 v-on:keyup.enter="addTask"
                 v-bind:type="type" 
                 v-bind:placeholder="placeholder"
@@ -27,7 +27,7 @@
                 py-2 px-4 
                 rounded 
                 px-2 mx-2 my-4"
-                @send-task="createTask">
+                @click="addTask">
             </todo-button>
         </div>
         
@@ -62,16 +62,13 @@ export default {
 
     methods:{
         addTask (){
-            this.tasks.push({
-                title: this.newTask,
+            let newTask = this.task;
+            this.task = {
+                title: '',
                 done: false
-            })
-            // this.newTask = ''; hace que el input quede en blanco después de crear una tarea
-            this.newTask = ''; 
-            this.$emit('new-task', this.Tasks)
-        },
-        createTask (){
-            this.$emit('receive-task', this.task)
+            }
+
+            this.$emit('new-task', newTask)
         },
         updateContent(content) {
             this.testContent = content;
