@@ -12,9 +12,6 @@
             <todo-tasks-list></todo-tasks-list>
         </todo-card> 
 
-        <todo-card class="mx-auto mt-10 w-full max-w-lg">
-           
-        </todo-card> 
     </div>
 </template>
 
