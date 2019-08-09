@@ -2,16 +2,17 @@
   <div>
     <div v-for="(task, index) in tasks"
     :key="task.id" class="container flex bg-gray-100 shadow p-4 my-1 rounded">
-      <div class="w-11/12 mr-20 cursor-pointer" v-if="!editing">
-        <h1 class="text-grey-400" @click="enableEditing">{{task.title}}</h1>   
+      <div class="w-11/12 mr-20 cursor-pointer" v-if="!editing || index != selectedTask">
+        <h1 class="text-grey-400" @click="updateTaskSelection(index)">{{task.title}}</h1>   
       </div>
-      <div v-if="editing" class="flex-1">
-        <input class="bg-gray-300 
+      <div v-if="editing && index == selectedTask" class="flex-1">
+        <input class="bg-white 
         focus:outline-none 
         focus:shadow-outline 
         border border-gray-300 
-        rounded-lg block w-full 
+        rounded px-2 block w-full 
         appearance-none leading-normal"
+        type="text"
         v-model="task.title"
         v-on:keyup.enter="editTask">
       </div>
@@ -38,6 +39,7 @@ export default {
     data() {
         return {
           editing: false,
+          selectedTask: -1
         };
     },
 
@@ -52,11 +54,15 @@ export default {
         },
         editTask(){
           this.editing = false
+          this.selectedTask = -1
         },
         enableEditing(){
           this.editing = true
+        },
+        updateTaskSelection(index){
+          this.enableEditing()
+          this.selectedTask = index
         }
-    },
-    
+    },    
 };
 </script>
