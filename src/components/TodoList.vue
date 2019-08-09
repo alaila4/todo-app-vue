@@ -1,8 +1,5 @@
 <template>
   <div class="container mx-auto px-4 py-4 flex flex-wrap">
-    <!-- <div>
-        <h1 class="text-xl text-center">Welcome to Your <strong>Todo App</strong></h1>
-    </div> -->
     
     <div class="w-1/2">
         <todo-card class="mx-auto mt-4 w-full max-w-lg">
