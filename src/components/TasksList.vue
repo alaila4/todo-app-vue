@@ -17,10 +17,10 @@
         v-on:keyup.enter="editTask"
         autofocus>
       </div>
-      <div class="px-8" @click="completeTask(index)">
+      <div v-if="!editing" class="px-8" @click="completeTask(index)">
         <i class="font-bold text-blue-700 rounded-full h-6 w-6 bg-blue-200 flex items-center justify-center cursor-pointer">&check;</i>
       </div>
-      <div @click="removeTask(index)">
+      <div v-if="!editing" @click="removeTask(index)">
         <i class="font-bold text-red-700 rounded-full h-6 w-6 bg-red-200 flex items-center justify-center cursor-pointer">&Chi;</i>
       </div>
     </div>
