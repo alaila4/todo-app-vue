@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <button class="text-center font-semibold" type="button" @click="$emit('click')"> ADD </button>
+    <div class="w-1/4">
+        <button class="text-center font-semibold" type="button" @click="$emit('click')"> Add </button>
     </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div>
+    <div class="container flex fle-wrap">
+        <div class="w-3/4">
             <input
                 class="bg-white 
                     focus:outline-none 
@@ -16,17 +16,16 @@
                 @input="updateContent($event.target.value)"
             >
         </div>
-        <div>
+        <div class="w-1/4 justify-end">
             <todo-button 
-                class="flex-content 
+                class="w-3/4
                 bg-green-500 
                 hover:bg-green-700 
                 text-center 
                 text-white 
                 font-bold 
-                py-2 px-4 
                 rounded 
-                px-2 mx-2 my-4"
+                py-3 px-4 my-4 mx-2"
                 @click="addTask">
             </todo-button>
         </div>
