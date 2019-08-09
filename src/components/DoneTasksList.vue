@@ -3,16 +3,15 @@
     <div
       v-for="(task, index) in tasks"
       :key="task.id"
-      class="container flex bg-gray-300 shadow p-4 my-1 rounded"
+      class="container flex bg-gray-100 shadow p-4 my-1 rounded"
     >
       <div class="w-11/12 mr-20">
-        <h1 class="text-gray-600">{{task.title}}</h1>
+        <h1 class="text-gray-400">{{task.title}}</h1>
       </div>
       <div class="w-1/12 ml-20 cursor-pointer" @click="removeTask(index)">
-        <i
-          class="font-bold text-red-700 rounded-full h-6 w-6 bg-red-200 flex py-1 items-center justify-center"
-        >&Chi;</i>
+         <img class="cursor-pointer  w-8 h-6" src="./assets/times_circle_regular.png">
       </div>
+      
     </div>
   </div>
 </template>
