@@ -14,7 +14,8 @@
         appearance-none leading-normal"
         type="text"
         v-model="task.title"
-        v-on:keyup.enter="editTask">
+        v-on:keyup.enter="editTask"
+        autofocus>
       </div>
       <div class="px-8" @click="completeTask(index)">
         <i class="font-bold text-blue-700 rounded-full h-6 w-6 bg-blue-200 flex items-center justify-center cursor-pointer">&check;</i>
