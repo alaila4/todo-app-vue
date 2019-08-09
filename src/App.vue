@@ -6,7 +6,7 @@
                 <img class="max-w-xs object-contain" src="./assets/type_logo.png">
             </div>
             
-            <div  class="mt-4">
+            <div class="mt-4">
                 <h1 class="text-xl text-center">Welcome to Your <strong>Todo App</strong></h1>
             </div> 
         </div>        
