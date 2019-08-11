@@ -8,6 +8,7 @@ import TasksList from './components/TasksList.vue';
 import DoneList from './components/DoneTasksList.vue';
 import Input from './components/Input.vue';
 import Button from './components/Button.vue';
+import Modal from './components/Modal.vue';
 
 
 Vue.config.productionTip = false;
@@ -18,6 +19,7 @@ Vue.component('todo-tasks-list', TasksList);
 Vue.component('todo-done-task-list', DoneList);
 Vue.component('todo-input', Input);
 Vue.component('todo-button', Button);
+Vue.component('todo-modal', Modal);
 
 
 new Vue({
