@@ -7,7 +7,7 @@
                     focus:shadow-outline 
                     border border-gray-300 
                     rounded-lg py-3 px-4 my-4 block w-full 
-                    appearance-none leading-normal" 
+                    appearance-none leading-normal"
                 v-model="task.title" 
                 v-on:keyup.enter="addTask"
                 v-bind:type="type" 
@@ -24,7 +24,8 @@
                 text-center 
                 text-white 
                 font-bold 
-                rounded 
+                rounded
+                lg: w-full 
                 py-3 px-4 my-4 mx-2"
                 @click="addTask">
             </todo-button>
