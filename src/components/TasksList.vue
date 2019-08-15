@@ -2,7 +2,7 @@
   <div>
     <div v-for="(task, index) in tasks" :key="task.id" class="container flex bg-gray-100 shadow p-4 my-1 rounded">
       
-      <div class="w-11/12 mr-20 cursor-pointer" v-if="!editing || index != selectedTask">
+      <div class="w-11/12 mr-20 cursor-pointer overflow-y-auto" v-if="!editing || index != selectedTask">
         <h1 class="text-gray-700" @click="updateTaskSelection(index)">{{task.title}}</h1>   
       </div>
 
@@ -12,7 +12,8 @@
         focus:shadow-outline 
         border border-gray-300 
         rounded px-2 block w-full 
-        appearance-none leading-normal"
+        appearance-none leading-normal
+        overflow-y-auto"
         type="text"
         v-model="task.title"
         v-on:keyup.enter="editTask"
@@ -25,7 +26,7 @@
       </div>
 
       <div class="mx-3" v-if="!editing" @click="removeTask(index)">
-        <img class="cursor-pointer  w-8 h-6" src="./assets/times_circle_regular.png">
+        <img class="cursor-pointer w-8 h-6" src="./assets/times_circle_regular.png">
         <!-- <i class="font-bold text-red-700 rounded-full h-6 w-6 bg-red-200 flex items-center justify-center cursor-pointer">&Chi;</i> -->
       </div>
       
